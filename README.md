@@ -18,7 +18,7 @@ Modify the "dataset.py" on how you load your dataset.
 
 run "python client.py --client_id=1" number depends on client.
 
-FOR SERVER
+**FOR SERVER**
 
 edit path of global model and global model rounds
 
@@ -26,7 +26,7 @@ run "python server.py"
 
 
 
-TESTING 
+**TESTING **
 
 "pip install cv"
 
