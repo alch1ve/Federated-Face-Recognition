@@ -10,18 +10,18 @@ from mtcnn import MTCNN
 import dataset
 
 
-# # Load the saved model
+# # Load the saved local model
 # saved_model_path = "C:/Users/aldri/federatedd/global model/final_global_model.keras"
 # loaded_model = tf.keras.models.load_model(saved_model_path)
 # loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-# Load the saved  local model
-saved_model_path = "C:/Users/aldri/federatedd/local model/final_local_model_client1.keras"
+# Load the saved global model
+saved_model_path = "C:/Users/aldri/OneDrive/Desktop/Federated-Face-Recognition/global model/global_model.keras"
 loaded_model = tf.keras.models.load_model(saved_model_path)
 loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Load the test dataset
-npz_path = r"C:\Users\aldri\federatedd\dataset\Client_1.npz"
+npz_path = r"C:\Users\aldri\OneDrive\Desktop\Federated-Face-Recognition\dataset\Client_1.npz"
 x_train, x_test, y_train, y_test = dataset.load_dataset_from_npz(npz_path, test_size=0.2)
 
 # Encode labels

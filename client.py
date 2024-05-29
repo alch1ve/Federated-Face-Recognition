@@ -9,13 +9,13 @@ import os
 # Make TensorFlow log less verbose
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
-# Define the path to your .npz dataset
-npz_path = r"C:\Users\aldri\federatedd\dataset\Client_1.npz"
+# Define the path to your dataset
+npz_path = r"C:\Users\aldri\OneDrive\Desktop\Federated-Face-Recognition\dataset\Client_1.npz"
 
 # Load dataset
 x_train, x_test, y_train, y_test = dataset.load_dataset_from_npz(npz_path, test_size=0.2)
 
-# Encode labels as integers (this part should be added here if needed)
+# Encode labels as integers 
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
 y_train = label_encoder.fit_transform(y_train)
@@ -31,7 +31,8 @@ class FlowerClient(NumPyClient):
         self.y_val = y_val
         self.model = model
         self.round_counter = 0  # Initialize the round counter
-        self.save_dir = "C:/Users/aldri/federatedd/local model/"
+        self.save_dir = "C:/Users/aldri/OneDrive/Desktop/Federated-Face-Recognition/local model" #Path of local model
+        
 
     def get_parameters(self, config):
         return self.model.get_weights()
@@ -45,8 +46,8 @@ class FlowerClient(NumPyClient):
             self.x_train,
             self.y_train,
             validation_data=(self.x_val, self.y_val),
-            epochs=10,
-            batch_size=32,
+            epochs=10, # Edit Epoch 
+            batch_size=32, # Edit Batch Size
             callbacks=[tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=2)]
         )
         
@@ -87,6 +88,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     start_client(
-        server_address="172.16.197.173:8080",
+        server_address="172.16.197.173:8080", # Edit with your own server ip address
         client=client_fn(args.client_id),
     )
