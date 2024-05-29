@@ -10,7 +10,9 @@ FOR CLIENTS
 
 
 edit path of dataset in line 13
+
 edit path of local model in line 34
+
 update server address in line 91
 
 Modify the "dataset.py" on how you load your dataset.
@@ -18,13 +20,17 @@ Modify the "dataset.py" on how you load your dataset.
 run "python client.py --client_id=1" number depends on client.
 
 FOR SERVER
+
 edit path of global model and global model rounds
+
 run "python server.py"
 
 
 
 TESTING 
+
 "pip install cv"
+
 "pip install keras-facenet"
 
 To try testing the global and local model
