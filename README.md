@@ -5,8 +5,7 @@ Go to terminal and enter "pip install ." within this folder directory.
 
 enter "pip install tensorflow"
 
-
-FOR CLIENTS
+**FOR CLIENTS**
 
 
 edit path of dataset in line 13
