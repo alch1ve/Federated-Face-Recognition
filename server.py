@@ -7,7 +7,7 @@ from model import create_model
 class CustomFedAvg(fl.server.strategy.FedAvg):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.global_model = create_model(512, 5)  # Update input_shape and num_classes accordingly
+        self.global_model = create_model(512, 5)  # Update input_shape and num_classes accordingly based on model
         self.num_rounds = kwargs.get('num_rounds', 3)  # edit the "3" to what round should the global model will be saved
         self.current_round = 0
 
