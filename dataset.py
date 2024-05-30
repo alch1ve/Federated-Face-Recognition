@@ -9,4 +9,4 @@ def load_dataset_from_npz(npz_path, test_size=0.2):
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test_size, random_state=42)
     return x_train, x_test, y_train, y_test
 
-# Edit this part base on your dataset
+# Edit this part base on how you load your dataset
