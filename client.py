@@ -65,8 +65,6 @@ class FlowerClient(NumPyClient):
 
 def client_fn(cid: str):
     """Create and return an instance of Flower `Client`."""
-    # No need to partition the data anymore
-    # Use entire dataset for training and validation
     # Create model instance for the client
     num_classes = len(np.unique(y_train))  # Number of unique classes (i.e., number of persons)
     input_shape = x_train.shape[1]  # Number of features
